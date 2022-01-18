@@ -1,4 +1,4 @@
-# leticinha-bonitinha
+# Desafio Mercado Eletrônico
 
 ## Project setup
 ```
