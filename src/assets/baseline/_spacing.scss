@@ -1,0 +1,41 @@
+@use "sass:map";
+
+@function toRem($value) {
+  $remValue: ($value / 16) + rem;
+  @return $remValue;
+}
+
+$paddings: (all: (),
+  vertical: (),
+  horizontal: (),
+);
+
+@for $i from 1 through 12 {
+  $paddings: map.set($paddings, "all", "p-#{$i}", toRem(calc(#{$i} * 2)));
+  $paddings: map.set($paddings, "vertical", "p-x-#{$i}", toRem(calc(#{$i} * 2)));
+  $paddings: map.set($paddings, "horizontal", "p-y-#{$i}", toRem(calc(#{$i} * 2)));
+
+  .p-y-#{$i} {
+    padding-top: toRem(calc(#{$i} * 2));
+    padding-bottom: toRem(calc(#{$i} * 2));
+  }
+
+  .p-x-#{$i} {
+    padding-left: toRem(calc(#{$i} * 2));
+    padding-right: toRem(calc(#{$i} * 2));
+  }
+
+  .m-#{$i} {
+    margin: toRem(calc(#{$i} * 2));
+  }
+
+  .m-y-#{$i} {
+    margin-top: toRem(calc(#{$i} * 2));
+    margin-bottom: toRem(calc(#{$i} * 2));
+  }
+
+  .m-x-#{$i} {
+    margin-left: toRem(calc(#{$i} * 2));
+    margin-right: toRem(calc(#{$i} * 2));
+  }
+}
