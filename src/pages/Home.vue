@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="home">
     <card />
   </div>
 </template>
@@ -20,3 +20,8 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+@use "../assets/baseline/theme";
+@use "sass:map";
+</style>
