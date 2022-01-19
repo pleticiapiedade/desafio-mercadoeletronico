@@ -10,6 +10,12 @@ export default createStore({
     setCard(state, card) {
       state.card = card;
     },
+    setDate(state) {
+      let date = new Date(state.card.header.createdAt);
+      let formattedDate = date.toLocaleDateString("pt-BR");
+
+      state.card.header.createdAt = formattedDate;
+    },
   },
   actions: {
     fetchCardData(context) {
@@ -17,13 +23,10 @@ export default createStore({
         .then((response) => response.json())
         .then((data) => {
           context.commit("setCard", data);
+          context.commit("setDate");
         })
         .catch((err) => console.error(err));
     },
   },
-  getters: {
-    card(state) {
-      return state.countries;
-    },
-  },
+  getters: {},
 })

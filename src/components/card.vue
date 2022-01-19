@@ -5,19 +5,23 @@
         <div class="title">
           <div class="order-number">
             <h3>Purchase Order</h3>
-            <p>4510001114</p>
-            <p>SerialME 1122334444</p>
+            <p>{{ card.header.number }}</p>
+            <p>SerialME {{ card.header.serial }}</p>
 
             <div class="logo-holder">
               <img src="" alt="" />
             </div>
           </div>
           <div class="description">
-
+            <p>{{ card.header.buyer }}</p>
           </div>
         </div>
 
-        <div class="amount"></div>
+        <div class="amount">
+          <p>{{ card.header.currency }} {{ card.header.price }}</p>
+          <p>{{ card.header.status }}</p>
+          <p>{{ card.header.createdAt }}</p>
+        </div>
       </div>
 
       <div class="details"></div>
@@ -28,9 +32,18 @@
 </template>
 
 <script>
+import { computed } from "vue";
+import { useStore } from "vuex";
+
 export default {
   name: "card",
-  setup() {},
+  setup() {
+    const store = useStore();
+    store.dispatch("fetchCardData");
+    let card = computed(() => store.state.card);
+
+    return { card: card };
+  },
 };
 </script>
 
