@@ -1,4 +1,4 @@
-# leticinha-bonitinha
+
 
 ## Project setup
 ```
