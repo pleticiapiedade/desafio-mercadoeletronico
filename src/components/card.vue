@@ -32,7 +32,21 @@
         </div>
       </div>
 
-      <div class="details"></div>
+      <div class="details">
+        <p class="subtitle">Supplier</p>
+        <div class="header-holder">
+          <h5>Motion Industries INC.</h5>
+          <p>Code #101908</p>
+        </div>
+        <div class="infos">
+          <div><p>00.888.053/0001-02</p></div>
+          <div><p>Jack Jeff Ripple Applejack - jack_jeff_applejack@motion.com</p></div>
+          <div><p>Read: 05/23/2020 09:45</p></div>
+          <div><p>O Box 3322 - Birmingham AL - 33331-4666 - United States of Am…</p></div>
+          <div><p>800-222-5522  -</p> <p>800-222-5522</p></div>
+          <div><p>Last Reply: 05/23/2020 10:10</p></div>
+        </div>
+      </div>
 
       <div class="addresses"></div>
     </div>
@@ -228,5 +242,68 @@ export default {
       font-size: 13px;
     }
 }
+
+.details{
+  padding: 10px 2rem;
+
+  p.subtitle{
+    color: map.get(theme.$colors, "grey");
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .infos{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 11fr));
+    grid-template-rows: repeat(auto-fit, minmax(20px, 11fr));
+    gap: 10px;
+
+    div{
+      text-align: justify;
+      padding-top: 8px;
+
+      display: flex;
+      gap: .5rem;
+
+      p{
+        font-size: .9rem;
+      }
+    }
+
+    div:not(:nth-child(3n+1)){
+      padding-left: 10px;
+    }
+
+    div:nth-child(3n){
+      text-align: end;
+     justify-content: flex-end;
+    }
+  }
+
+}
+
+.header-holder{
+    display: flex;
+    align-items: baseline;
+
+    padding-top: 5px;
+
+    gap: 1rem;
+
+    h5{
+      color: map.get(theme.$colors, "highlight");
+    }
+
+    p{
+      color: map.get(theme.$colors, "grey");
+      font-size: 14px;
+      font-weight: 500;
+
+      padding: 5px 10px;
+
+      background: RGBA(10, 140, 204, 0.12);
+      border-radius: 20px;
+    }
+  }
 
 </style>
