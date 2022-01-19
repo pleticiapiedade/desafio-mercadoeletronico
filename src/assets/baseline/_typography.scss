@@ -1,12 +1,13 @@
 @font-face {
   font-family: "Open Sans";
-  src: url("/assets/fonts/Open_Sans/OpenSans.ttf") format('truetype');
+  src: local("Open Sans"), 
+  url("/src/assets/fonts/Open_Sans/OpenSans.ttf") format('truetype');
 }
 
 @font-face {
   font-family: "Open Sans";
   font-style: italic, oblique;
-  src: url("/assets/fonts/Open_Sans/OpenSans-Italic.ttf") format('truetype');
+  src:local("Open Sans") url("/src/assets/fonts/Open_Sans/OpenSans-Italic.ttf") format('truetype');
 }
 
 html {

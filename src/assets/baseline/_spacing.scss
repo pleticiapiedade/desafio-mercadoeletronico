@@ -1,7 +1,7 @@
 @use "sass:map";
 
 @function toRem($value) {
-  $remValue: ($value / 16) + rem;
+  $remValue: calc($value / 16) + rem;
   @return $remValue;
 }
 

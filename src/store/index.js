@@ -4,7 +4,7 @@ import {
 
 export default createStore({
   state: {
-    card: [],
+    card: false,
   },
   mutations: {
     setCard(state, card) {

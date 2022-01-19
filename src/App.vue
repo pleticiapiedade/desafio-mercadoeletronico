@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import "./assets/style.scss";
+
 
 export default {
   setup() {},
@@ -11,4 +11,5 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/style.scss";
 </style>
